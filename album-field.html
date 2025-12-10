@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Field Album | Our Shared Journey</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="album-page-style">
+    <div id="sakura-particles-container" class="flower-particles"></div>
+    <section class="gallery-page container" style="padding-top: 80px">
+      <a href="index.html#story" class="btn-back" data-aos="fade-right">
+        &larr; Kembali ke Milestones
+      </a>
+
+      <h1 class="section-title" data-aos="fade-down">📸 Field Album</h1>
+
+      <p class="gallery-description" data-aos="fade-up" data-aos-delay="200">
+        Kumpulan momen manis kami, diabadikan oleh Field.
+      </p>
+
+      <div class="card-stack-gallery" data-aos="fade-up" data-aos-delay="400">
+        <div class="stack-controls-mobile">
+          <button id="prev-btn" class="stack-btn-control disabled">
+            &#10094;
+          </button>
+          <div id="card-counter" class="counter-text">1 / 10</div>
+          <button id="next-btn" class="stack-btn-control">&#10095;</button>
+        </div>
+
+        <div class="photo-card-stack-container">
+          <div
+            class="photo-slot stack-card active"
+            data-card-id="10"
+            data-photo-path="field_10.jpg"
+            data-caption="Foto Field: Ke-10"
+          >
+            <img src="FIELD (20).png" alt="Foto Field 10" loading="lazy" />
+            <div class="caption-slot">Momen 10</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="9"
+            data-photo-path="field_09.jpg"
+            data-caption="Foto Field: Ke-9"
+          >
+            <img src="FIELD (19).png" alt="Foto Field 9" loading="lazy" />
+            <div class="caption-slot">Momen 9</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="8"
+            data-photo-path="field_08.jpg"
+            data-caption="Foto Field: Ke-8"
+          >
+            <img src="FIELD (18).png" alt="Foto Field 8" loading="lazy" />
+            <div class="caption-slot">Momen 8</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="7"
+            data-photo-path="field_07.jpg"
+            data-caption="Foto Field: Ke-7"
+          >
+            <img src="FIELD (17).png" alt="Foto Field 7" loading="lazy" />
+            <div class="caption-slot">Momen 7</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="6"
+            data-photo-path="field_06.jpg"
+            data-caption="Foto Field: Ke-6"
+          >
+            <img src="FIELD (16).png" alt="Foto Field 6" loading="lazy" />
+            <div class="caption-slot">Momen 6</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="5"
+            data-photo-path="field_05.jpg"
+            data-caption="Foto Field: Ke-5"
+          >
+            <img src="FIELD (15).png" alt="Foto Field 5" loading="lazy" />
+            <div class="caption-slot">Momen 5</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="4"
+            data-photo-path="field_04.jpg"
+            data-caption="Foto Field: Ke-4"
+          >
+            <img src="FIELD (14).png" alt="Foto Field 4" loading="lazy" />
+            <div class="caption-slot">Momen 4</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="3"
+            data-photo-path="field_03.jpg"
+            data-caption="Foto Field: Ke-3"
+          >
+            <img src="FIELD (13).png" alt="Foto Field 3" loading="lazy" />
+            <div class="caption-slot">Momen 3</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="2"
+            data-photo-path="field_02.jpg"
+            data-caption="Foto Field: Ke-2"
+          >
+            <img src="FIELD (12).png" alt="Foto Field 2" loading="lazy" />
+            <div class="caption-slot">Momen 2</div>
+          </div>
+          <div
+            class="photo-slot stack-card"
+            data-card-id="1"
+            data-photo-path="field_01.jpg"
+            data-caption="Foto Field: Ke-1"
+          >
+            <img src="FIELD (11).png" alt="Foto Field 1" loading="lazy" />
+            <div class="caption-slot">Momen 1</div>
+          </div>
+        </div>
+
+        <div class="stack-controls-desktop">
+          <button id="prev-btn-desktop" class="stack-btn disabled">
+            &#10094; Sebelumnya
+          </button>
+          <button id="next-btn-desktop" class="stack-btn">
+            Selanjutnya &#10095;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <hr class="elegant-divider" />
+    <footer id="contact" class="footer"></footer>
+
+    <div id="photo-modal" class="photo-modal"></div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="sakura-particles.js"></script>
+  </body>
+</html>
