@@ -1,0 +1,924 @@
+/* RESET DASAR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-color: #d36a96;
+  --secondary-color: #f8bbd0;
+  --accent-blue: #29b6f6;
+  --accent-green: #66bb6a;
+  --accent-orange: #ff7043;
+  --bg-gradient: linear-gradient(135deg, #fff0f5 0%, #fae9f4 100%);
+  --text-dark: #333;
+  --text-light: #666;
+  --card-shadow: 6px 6px 12px rgba(100, 100, 100, 0.08),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+  --card-bg: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  color: var(--text-dark);
+  background: var(--bg-gradient);
+  font-size: 14px;
+  /* FIX: Agar body berada di atas partikel */
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* HEADER & NAVIGASI */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.navbar {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background: linear-gradient(45deg, var(--primary-color), #e399b7);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* HOME SECTION */
+.hero-section {
+  min-height: auto;
+  padding: 30px 15px;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 250px;
+  margin-bottom: 25px;
+  order: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.hero-content {
+  order: 2;
+  padding: 0 10px;
+}
+
+.hero-headline {
+  font-size: 2rem;
+  margin-bottom: 5px;
+
+  color: var(--primary-color);
+  display: inline-block;
+  padding: 8px 20px;
+
+  text-shadow: 1.5px 1.5px 0 #ffffff;
+}
+
+.hero-subheadline {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+/* OUR STORY SECTION */
+.story-section {
+  padding: 50px 15px;
+  background-color: var(--bg-gradient);
+}
+
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.milestone-card {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* --- DEFINISI WARNA/GAMBAR LATAR MILESTONE CARD --- */
+
+/* --- DEFINISI WARNA/GAMBAR LATAR MILESTONE CARD --- */
+
+/* The Start & Favorite Destinations TETAP MENGGUNAKAN WARNA/GRADIENT */
+.card-blue {
+  background: linear-gradient(135deg, #81d4fa, var(--accent-blue));
+}
+.card-green {
+  background: linear-gradient(135deg, #a5d6a7, var(--accent-green));
+}
+/* --- STYLE KHUSUS UNTUK KARTU FOTO DI TIMELINE (CARD-PHOTO) --- */
+
+/* Gaya dasar kartu foto */
+.milestone-card.card-photo {
+  padding: 0; /* Hapus padding agar gambar menempel ke tepi */
+  background: var(--card-bg);
+  overflow: hidden; /* Penting untuk radius gambar */
+  /* Pastikan border radius diterapkan ke kartu utama */
+  border-radius: 10px;
+}
+
+/* 🛑 GAYA POTRAIT MURNI (Menggunakan aspect-ratio) */
+.milestone-card.card-portrait {
+  /* Hanya memastikan background dan shadow ada di .card-photo */
+}
+
+.milestone-card.card-portrait .milestone-cover-img {
+  width: 100%;
+
+  /* 🛑 KUNCI: MENGATUR BENTUK POTRAIT 3:4 */
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+  display: block;
+  border-radius: 10px 10px 0 0; /* Radius di atas */
+}
+
+/* Styling Judul Kartu Potrait */
+.milestone-card.card-portrait h3 {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: center;
+  background-color: var(--card-bg);
+  /* Tambahkan sedikit ruang di bawah judul agar tidak menempel ke tepi kartu */
+  margin-bottom: 0;
+}
+
+/* Sembunyikan ikon untuk kartu foto (jika ada) */
+.milestone-card.card-photo i {
+  display: none;
+}
+
+/* Efek Hover (Berlaku untuk semua .milestone-card) */
+.milestone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+}
+/* --- STYLE KHUSUS UNTUK KARTU FOTO DI TIMELINE (CARD-PHOTO) --- */
+
+/* Gaya untuk kartu yang menggunakan IMG (Field dan Lovely Album) */
+.milestone-card.card-photo {
+  padding: 0; /* Hapus padding agar gambar bisa mengisi */
+  background: var(--card-bg); /* Beri latar belakang putih */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Ganti display flex agar judul berada di bawah foto */
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* --- STYLE KHUSUS UNTUK KARTU POTRAIT BARU --- */
+
+/* --- STYLE KHUSUS UNTUK KARTU DENGAN FOTO LATAR (FIELD & LOVELY) --- */
+/* BARIS 139: GANTI DENGAN INI */
+.milestone-card {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  position: relative;
+  text-decoration: none;
+
+  /* 🛑 KARTU IKON: Mengatur agar Ikon dan Teks di tengah */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ALBUM SECTION */
+.albums-section {
+  padding: 50px 15px;
+  background-color: var(--bg-gradient);
+}
+
+.albums-description {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  padding: 15px;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.project-card p {
+  padding: 0 15px 15px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.view-btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 15px 15px;
+  transition: background-color 0.3s;
+}
+
+.view-btn:hover {
+  background-color: #e399b7;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.social-media {
+  /* Menambah margin di bawah social media agar tidak terlalu dekat dengan copyright */
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0 15px;
+  transition: transform 0.3s;
+}
+
+.social-media a:hover {
+  transform: scale(1.15);
+  color: var(--secondary-color); /* Beri sedikit warna cerah saat di-hover */
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #eee;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.photo-slot {
+  /* ... */
+  border: 3px solid var(--primary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4), 0 12px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.photo-slot:hover {
+  transform: scale(1.05) rotateZ(0.5deg);
+  /* GLOW LEBIH INTENS SAAT HOVER (WOW EFFECT) */
+  box-shadow: 0 0 35px var(--primary-color), 0 0 70px rgba(255, 105, 180, 0.8),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+/* ... */
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+}
+
+.image-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 100px);
+  overflow: hidden;
+}
+
+#modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+  transition: opacity 0.3s;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev-btn,
+.next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 50px;
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.photo-slot:hover {
+  transform: scale(1.05) rotateZ(0.5deg);
+
+  /* GLOW LEBIH INTENS SAAT HOVER (WOW EFFECT) */
+  box-shadow: 0 0 35px var(--primary-color), 0 0 70px rgba(255, 105, 180, 0.8),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ... (lanjutkan styling untuk .photo-slot img, .caption-slot, dll.) ... */
+
+.photo-slot img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.1); /* Sedikit lebih hidup */
+  transition: all 0.5s;
+}
+
+.photo-slot:hover img {
+  filter: saturate(1.4) contrast(1.1); /* Warna meletup dan kontras naik saat di-hover */
+}
+
+.caption-slot {
+  padding: 15px 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* ======================================= */
+/* MODAL FOTO (OVERLAY BACKGROUND) */
+/* ======================================= */
+#photo-modal {
+  /* Pastikan modal menutupi seluruh layar dan berada di atas segalanya */
+  display: none; /* Disembunyikan secara default oleh JS */
+  position: fixed;
+  z-index: 2000; /* Nilai Z-Index sangat tinggi */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9); /* Latar belakang gelap */
+}
+
+/* Penyesuaian Tombol Navigasi Modal */
+.prev-btn,
+.next-btn {
+  /* Tingkatkan ukuran padding tombol navigasi */
+  padding: 20px;
+  /* Gunakan warna yang lebih jelas */
+  background-color: rgba(
+    211,
+    106,
+    150,
+    0.8
+  ); /* Warna primary-color dengan opasitas */
+  color: white;
+  font-size: 35px; /* Sedikit lebih besar */
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: var(--primary-color); /* Warna solid saat hover */
+  transform: scale(1.05);
+}
+
+/* ======================================= */
+/* STYLE GALERI FOTO UNTUK INDEX.HTML (HORIZONTAL - 4:3) */
+/* ======================================= */
+.start-photo-gallery,
+.destinations-photo-gallery,
+.commitments-photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* ======================================= */
+/* STYLE GALERI FOTO UNTUK THE GREAT ESCAPE (POTRAIT - 3:4) */
+/* ======================================= */
+
+/* Mengganti Rasio Potrait (3:4) untuk semua galeri yang menggunakan photo-slot */
+.start-photo-gallery .photo-slot img,
+.destinations-photo-gallery .photo-slot img,
+.commitments-photo-gallery .photo-slot img {
+  width: 100%;
+  border-radius: 20px;
+
+  /* 🛑 KUNCI: Gunakan Aspect Ratio Potrait */
+  aspect-ratio: 3 / 4 !important;
+
+  /* PENTING: Menghapus kemungkinan konflik tinggi statis */
+  height: auto !important;
+
+  object-fit: cover;
+  display: block;
+}
+
+/* Aturan Grid untuk Mobile */
+.start-photo-gallery,
+.destinations-photo-gallery,
+.commitments-photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 Kolom di mobile/tablet kecil */
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* MEDIA QUERY DESKTOP */
+@media (min-width: 768px) {
+  .start-photo-gallery,
+  .commitments-photo-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom di desktop */
+    gap: 30px;
+  }
+  .destinations-photo-gallery {
+    grid-template-columns: repeat(4, 1fr); /* 4 Kolom di desktop (jika ada) */
+    gap: 30px;
+  }
+}
+/* ======================================= */
+/* FUNGSI GALERI POTRAIT KHUSUS (FIELD & LOVELY ALBUM) */
+/* ======================================= */
+
+/* Aturan Grid untuk halaman Field dan Lovely Album */
+.album-page-style .photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mobile: 2 Kolom */
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 🛑 KUNCI: Membuat Gambar Tampil Potrait (3:4) */
+.album-page-style .photo-slot img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Potrait 3:4 */
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.1);
+  transition: all 0.5s;
+}
+
+.album-page-style .caption-slot {
+  padding: 10px 5px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: var(--card-bg);
+}
+
+/* MEDIA QUERY DESKTOP untuk Halaman Album */
+@media (min-width: 768px) {
+  .album-page-style .photo-gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 Kolom */
+    gap: 30px;
+  }
+
+  .album-page-style .photo-slot img {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ======================================= */
+/* CARD STACK GALLERY (Final - Flexbox Content) */
+/* ======================================= */
+
+/* CONTAINER STACK UTAMA (Mobile Default) */
+.photo-card-stack-container {
+  position: relative;
+  width: 300px; /* Lebar Kartu di Mobile */
+  height: 400px; /* Tinggi Kartu di Mobile */
+  margin: 20px auto;
+  min-height: 500px;
+}
+
+/* KARTU INDIVIDUAL - DIATUR SEBAGAI FLEX CONTAINER */
+.stack-card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  /* 🛑 KUNCI PERBAIKAN: GUNAKAN FLEXBOX DI SINI */
+  display: flex;
+  flex-direction: column; /* Konten disusun vertikal */
+  justify-content: space-between; /* Caption di bawah */
+}
+
+/* Gambar di dalam Kartu */
+.stack-card img {
+  width: 100%;
+
+  /* 🛑 KUNCI PERBAIKAN: FLEX-GROW AGAR MENGISI RUANG YANG TERSISA */
+  flex-grow: 1;
+  height: auto; /* Izinkan tinggi diatur oleh flex-grow */
+  object-fit: cover;
+  display: block;
+  border-radius: 7px 7px 0 0;
+  filter: saturate(1.1);
+  transition: all 0.5s;
+
+  /* HAPUS aspect-ratio: 3/4; jika Anda ingin gambar mengisi sisa ruang secara fleksibel */
+  /* Jika Anda bersikeras 3:4, gambar akan terpotong (cropped) untuk mengisi */
+}
+
+/* Caption Slot - Tinggi Tetap */
+.caption-slot {
+  /* ... (gaya yang sudah ada) ... */
+  padding: 15px 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: var(--card-bg);
+
+  /* 🛑 KUNCI PERBAIKAN: SHRINK agar tidak mengambil ruang lebih */
+  flex-shrink: 0;
+}
+/* ... (lanjutkan dengan stack-controls-mobile, stack-controls-desktop, dan media query yang sudah benar) ... */
+
+/* Efek Hover (Pertahankan) */
+.stack-card:hover {
+  transform: scale(1.05) rotateZ(0.5deg);
+  box-shadow: 0 0 35px var(--primary-color), 0 0 70px rgba(255, 105, 180, 0.8),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------------------------- */
+/* KONTROL NAVIGASI (MOBILE DEFAULT) */
+/* ------------------------------------- */
+
+.stack-controls-mobile {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto 20px auto;
+}
+
+.counter-text {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stack-controls-desktop {
+  display: none;
+  margin-top: 30px;
+}
+
+.stack-btn-control {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 5px 15px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.stack-btn-control:hover:not(.disabled) {
+  background-color: var(--secondary-color);
+}
+
+.stack-btn-control.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* DESKTOP MEDIA QUERY (Aktif di layar > 768px) */
+@media (min-width: 768px) {
+  .photo-card-stack-container {
+    width: 400px;
+    height: 533px;
+  }
+
+  .stack-controls-mobile {
+    display: none;
+  }
+
+  .stack-controls-desktop {
+    display: block;
+    text-align: center;
+  }
+
+  .stack-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: opacity 0.3s;
+  }
+
+  .stack-btn:hover:not(.disabled) {
+    opacity: 0.8;
+  }
+}
+
+/* ... semua kode CSS lama Anda (untuk body, container, cards, dll.) di sini ... */
+/* ... */
+/* ... */
+
+/* --- TANDA PEMBATAS --- */
+/* --- PERBAIKAN DAN PENAMBAHAN GAYA BARU (taruh di bawah sendiri) --- */
+
+.btn-back {
+  display: inline-block;
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: #f8bbd0;
+  border-radius: 8px;
+  color: #5d5d5d;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-back:hover {
+  background-color: #f48fb1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* --- Perbaikan untuk Teks Deskripsi Album --- */
+
+.gallery-description {
+  /* 1. Pemusatan Teks Horizontal */
+  text-align: center;
+
+  /* 2. Gaya Visual (Agar tidak terlalu polos) */
+  font-size: 1.1em; /* Sedikit lebih besar dari default */
+  color: #555; /* Warna teks abu-abu gelap */
+  max-width: 80%; /* Batasi lebar agar teks tidak terlalu panjang di layar besar */
+  margin: 10px auto 30px auto; /* Memastikan pemusatan blok dan memberikan ruang di bawah */
+  line-height: 1.6; /* Jarak antar baris agar mudah dibaca */
+
+  /* 3. Penggantian Font */
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Lanjutan Perbaikan dan Penambahan Gaya Baru --- */
+
+/* 1. Atur Font Dasar dan Background Gradien untuk Seluruh Halaman Album */
+.album-page-style {
+  /* Overwrite background body standar */
+  background: linear-gradient(180deg, #ffffff, #f8e8f5);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif; /* Terapkan Poppins di body */
+}
+
+/* 2. Pemusatan dan Gaya untuk Judul H1 (Field Album) */
+.section-title {
+  text-align: center;
+  margin: 20px auto 10px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  color: var(--text-dark); /* Menggunakan variabel yang sudah ada */
+}
+
+/* 3. Gaya untuk Garis Pemisah (Jika Anda sudah menambahkannya di HTML) */
+.elegant-divider {
+  border: none;
+  height: 1px;
+  width: 60%;
+  margin: 50px auto;
+  background-color: #f0b8d9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Tambahan untuk Garis Pemisah di style.css --- */
+.elegant-divider {
+  border: none;
+  height: 1px;
+  width: 60%;
+  margin: 50px auto;
+  background-color: #f0b8d9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- LAPISAN PARTIKEL BARU (HANYA CONTAINER) --- */
+
+.flower-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Z-Index Tinggi agar partikel muncul di atas semua konten */
+  pointer-events: none; /* Penting: Agar bisa mengklik konten di bawahnya */
+  background-color: transparent;
+  overflow: hidden; /* Pastikan kelopak yang keluar batas tidak terlihat */
+}
+
+/* GAYA KELOPAK BUNGA INDIVIDUAL (Dibuat oleh JS) */
+.petal {
+  position: absolute;
+  width: 15px; /* Ukuran kelopak */
+  height: 15px;
+  background-image: url("petal-pattern.png"); /* Ganti jika nama file Anda beda */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0, 100;
+  /* Animasi Rotasi Acak */
+  animation: rotate 10s linear infinite;
+}
+
+/* Animasi Rotasi Sederhana */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
